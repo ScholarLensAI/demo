@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ko">
 <head>
-<title>Interactive Q&A</title>
+<title>Core Concept</title>
 
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=1280, height=720, initial-scale=1.0"/>
@@ -10,13 +10,13 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 <style>
   :root{
-    --bg:#0b1020; /* deep navy */
+    --bg:#0b1020;
     --card:#0f1733;
     --muted: rgba(255,255,255,.65);
     --muted2: rgba(255,255,255,.45);
     --line: rgba(255,255,255,.10);
-    --accent:#6366f1; /* indigo-500 */
-    --accent2:#a855f7; /* purple-500 */
+    --accent:#6366f1;
+    --accent2:#a855f7;
   }
   *{font-family:'Noto Sans KR',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;}
   body{margin:0;width:1280px;height:720px;overflow:hidden;background:var(--bg);}
@@ -136,136 +136,67 @@
 <body>
 <div class="slide">
   <div class="decor a"></div><div class="decor b"></div>
+
   <div class="absolute left-[56px] right-[56px] top-[40px] flex items-start justify-between">
     <div>
       <div class="flex items-center gap-3">
-        <span class="chip px-3 py-1 rounded-full text-xs font-bold tracking-wider">VALUE</span>
+        <span class="chip px-3 py-1 rounded-full text-xs font-bold tracking-wider">WHAT</span>
         <div class="text-white/45 text-xs tracking-widest uppercase">ScholarLens AI</div>
       </div>
-      <h1 class="h1 text-[48px] leading-[1.05] font-black text-white mt-4">Features 4</h1>
-      <div class="text-sm text-white/55 mt-2">질문·토론으로 사고를 확장하는 리딩 경험</div>
+      <h1 class="h1 text-[48px] leading-[1.05] font-black text-white mt-4">Core Concept</h1>
+      <div class="text-sm text-white/55 mt-2">논문을 '읽는 도구' → '함께 이해하는 연구 파트너'</div>
     </div>
     <div class="text-right text-white/35 text-sm">
       <div class="font-semibold">Upstage AI Ambassador 1기 · Team 2</div>
     </div>
   </div>
 
-
-<div class="absolute left-[56px] right-[56px] top-[175px] bottom-[70px] grid grid-cols-12 gap-6">
-  <div class="col-span-5 flex flex-col">
-    <div class="glass rounded-3xl p-6 flex-1 flex flex-col">
-      <div class="text-white/70 text-sm tracking-widest uppercase">Interactive Q&A</div>
-      <div class="mt-3 text-white text-[28px] font-black leading-tight">
-        Solar LLM 기반<br/>
-        <span class="text-indigo-300">실시간 대화형 분석</span>
-      </div>
-      <div class="mt-4 text-white/55 text-sm leading-relaxed">
-        사용자는 논문을 보면서 즉시 질문하고, 답변은 항상 <span class="text-white font-semibold">논문 텍스트 근거</span>와 함께 제공합니다.
-        이는 환각(Hallucination)을 줄이고, 연구자의 판단을 돕습니다.
+  <!-- 중앙 메인 메시지 -->
+  <div class="absolute inset-0 flex items-center justify-center">
+    <div class="text-center px-20" style="margin-top: 120px;">
+      <div class="mb-6">
+        <div class="text-indigo-300 font-bold tracking-[0.3em] text-sm mb-3">SCHOLARLENS AI</div>
+        <div class="w-20 h-1 bg-indigo-400 mx-auto rounded-full"></div>
       </div>
 
-      <div class="mt-5 grid grid-cols-1 gap-3 flex-1">
-        <div class="glass rounded-2xl p-5">
-          <div class="text-white font-bold text-sm">질문 예시</div>
-          <div class="mt-2 text-white/55 text-xs leading-relaxed">
-            • 이 논문의 핵심 기여는 무엇인가?<br/>
-            • Figure 3의 정량 결과가 의미하는 바는?<br/>
-            • 이 방법의 한계와 향후 개선 방향은?
-          </div>
-        </div>
-        <div class="glass rounded-2xl p-5">
-          <div class="text-white font-bold text-sm">Grounded Answer</div>
-          <div class="mt-2 text-white/45 text-xs leading-relaxed">
-            답변에는 인용/근거 위치(섹션, 문장, 좌표)를 포함하여 검증 가능하게 설계합니다.
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+      <h4 class="text-6xl font-black text-white leading-tight mb-2">
+        연구의 본질인 <span style="color: #a5b4fc;">'통찰'</span>에
+      </h4>
+      <h4 class="text-6xl font-black text-white leading-tight mb-12">
+        더 집중하도록
+      </h4>
 
-  <div class="col-span-7 flex flex-col">
-    <div class="glass rounded-3xl p-6 flex-1 flex flex-col">
-      <div class="text-white/70 text-sm tracking-widest uppercase">Chat Mock</div>
-      <div class="mt-4 rounded-3xl bg-black/20 border border-white/10 p-5 flex-1 flex flex-col min-h-0">
-        <div class="flex items-center justify-between text-white/45 text-xs">
-          <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-emerald-400/80"></span> Solar LLM
-          </div>
-          <div>Grounded · Citation-ready</div>
+      <!-- 3개 카드 -->
+      <div class="grid grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div class="glass rounded-3xl p-8 text-left hover:bg-white/8 transition-all">
+          <h3 class="text-white text-xl font-bold mb-3">구조적 파악</h3>
+          <p class="text-white/55 text-sm leading-relaxed">
+            레이아웃을 보존해 맥락 붕괴를 줄입니다.
+          </p>
         </div>
 
-        <div class="mt-4 space-y-3 flex-1 overflow-y-auto pr-2 min-h-0">
-          <div class="flex justify-end">
-            <div class="max-w-[72%] rounded-2xl bg-indigo-500/15 border border-indigo-400/20 px-4 py-3 text-white/80 text-xs break-words overflow-wrap-anywhere">
-              이 논문의 핵심 기여 3가지를 요약해줘.
-            </div>
-          </div>
-
-          <div class="flex justify-start gap-2">
-            <div class="w-8 h-8 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-indigo-300 flex-shrink-0">
-              <i class="fa-solid fa-sun text-xs"></i>
-            </div>
-            <div class="max-w-[72%] rounded-2xl bg-white/5 border border-white/10 px-4 py-3 text-white/75 text-xs break-words overflow-wrap-anywhere">
-              <div class="font-bold text-white mb-2">요약(근거 포함)</div>
-              <ol class="list-decimal ml-4 space-y-1.5 text-[11px]">
-                <li>새로운 방법 A 제안 — <span class="text-white/55">Method §3.1</span></li>
-                <li>정량 성능 개선 — <span class="text-white/55">Results §4, Fig.3</span></li>
-                <li>적용 범위 확장 — <span class="text-white/55">Discussion §5</span></li>
-              </ol>
-              <div class="mt-2 text-white/45 text-[10px] break-words">
-                Evidence: §3.1, §4, Fig.3, §5 (clickable)
-              </div>
-            </div>
-          </div>
-
-          <div class="flex justify-end">
-            <div class="max-w-[72%] rounded-2xl bg-indigo-500/15 border border-indigo-400/20 px-4 py-3 text-white/80 text-xs break-words overflow-wrap-anywhere">
-              이 결과의 한계는 뭐야?
-            </div>
-          </div>
-
-          <div class="flex justify-start gap-2">
-            <div class="w-8 h-8 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-indigo-300 flex-shrink-0">
-              <i class="fa-solid fa-sun text-xs"></i>
-            </div>
-            <div class="max-w-[72%] rounded-2xl bg-white/5 border border-white/10 px-4 py-3 text-white/75 text-xs break-words overflow-wrap-anywhere">
-              <div class="font-bold text-white mb-2">한계</div>
-              실험 설정이 특정 도메인에 편향되어 일반화가 제한될 수 있습니다. <span class="text-white/55">(Limitations §6)</span>
-            </div>
-          </div>
+        <div class="glass rounded-3xl p-8 text-left hover:bg-white/8 transition-all">
+          <h3 class="text-white text-xl font-bold mb-3">심층 이해</h3>
+          <p class="text-white/55 text-sm leading-relaxed">
+            핵심 주장·근거·한계를 시각화합니다.
+          </p>
         </div>
 
-        <div class="pt-3 border-t border-white/10 flex items-center gap-3">
-          <div class="flex-1 rounded-2xl bg-white/5 border border-white/10 px-4 py-2.5 text-white/35 text-xs break-words">
-            질문을 입력하세요…
-          </div>
-          <button class="rounded-2xl bg-indigo-500/70 hover:bg-indigo-500 text-white px-4 py-2.5 text-xs font-bold flex-shrink-0">
-            Send
-          </button>
+        <div class="glass rounded-3xl p-8 text-left hover:bg-white/8 transition-all">
+          <h3 class="text-white text-xl font-bold mb-3">능동적 상호작용</h3>
+          <p class="text-white/55 text-sm leading-relaxed">
+            Q&A로 사고를 확장합니다.
+          </p>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<script>
-  const order = ["slide01.html","slide02.html","slide03.html","slide04.html","slide05.html","slide06.html","slide07.html","slide08.html","slide09.html","slide10.html","slide11.html"];
-  const here = location.pathname.split('/').pop();
-  const i = order.indexOf(here);
-  function go(idx){ if(idx>=0 && idx<order.length){ location.href = order[idx];}}
-  document.addEventListener('keydown', (e)=>{
-    if(e.key==="ArrowRight"||e.key==="PageDown"||e.key===" "){ go(i+1); }
-    if(e.key==="ArrowLeft"||e.key==="PageUp"){ go(i-1); }
-    if(e.key==="Home"){ go(0); }
-    if(e.key==="End"){ go(order.length-1); }
-    if(e.key==="Escape"){ location.href="index.html"; }
-  });
-</script>
-
 <!-- Global Footer -->
 <footer class="global-footer">
   <div class="footer-left">
-    <a href="index.html" class="home-btn">
+    <a href="../index.html" class="home-btn">
       <i class="fa-solid fa-home"></i>
       <span>Home</span>
     </a>
@@ -360,7 +291,7 @@
       location.href = slideOrder[slideOrder.length - 1];
     }
     if (e.key === "Escape") {
-      location.href = "index.html";
+      location.href = "../index.html";
     }
   });
 })();

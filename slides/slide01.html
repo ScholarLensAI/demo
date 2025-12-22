@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ko">
 <head>
-<title>Core Concept</title>
+<title>Information Overload</title>
 
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=1280, height=720, initial-scale=1.0"/>
@@ -29,6 +29,7 @@
   .decor.b{background:rgba(168,85,247,.28); width:620px; height:620px; right:-180px; bottom:-220px;}
   .footer{position:absolute; left:56px; right:56px; bottom:26px; display:flex; align-items:center; justify-content:space-between; color:rgba(255,255,255,.35); font-size:12px;}
   .kbd{border:1px solid rgba(255,255,255,.12); padding:2px 8px; border-radius:10px; background:rgba(255,255,255,.04);}
+  .big-number{font-family: 'Oswald', sans-serif; font-weight: 700; line-height: 1;}
   /* Global Footer Styles */
   .global-footer {
     position: fixed;
@@ -140,53 +141,81 @@
   <div class="absolute left-[56px] right-[56px] top-[40px] flex items-start justify-between">
     <div>
       <div class="flex items-center gap-3">
-        <span class="chip px-3 py-1 rounded-full text-xs font-bold tracking-wider">WHAT</span>
+        <span class="chip px-3 py-1 rounded-full text-xs font-bold tracking-wider">WHY</span>
         <div class="text-white/45 text-xs tracking-widest uppercase">ScholarLens AI</div>
       </div>
-      <h1 class="h1 text-[48px] leading-[1.05] font-black text-white mt-4">Core Concept</h1>
-      <div class="text-sm text-white/55 mt-2">논문을 '읽는 도구' → '함께 이해하는 연구 파트너'</div>
+      <h1 class="h1 text-[48px] leading-[1.05] font-black text-white mt-4">Information Overload</h1>
+      <div class="text-sm text-white/55 mt-2">PROBLEM CONTEXT</div>
     </div>
     <div class="text-right text-white/35 text-sm">
       <div class="font-semibold">Upstage AI Ambassador 1기 · Team 2</div>
     </div>
   </div>
 
-  <!-- 중앙 메인 메시지 -->
-  <div class="absolute inset-0 flex items-center justify-center">
-    <div class="text-center px-20" style="margin-top: 120px;">
-      <div class="mb-6">
-        <div class="text-indigo-300 font-bold tracking-[0.3em] text-sm mb-3">SCHOLARLENS AI</div>
-        <div class="w-20 h-1 bg-indigo-400 mx-auto rounded-full"></div>
+  <div class="absolute left-[56px] right-[56px] top-[190px] grid grid-cols-12 gap-8">
+    <div class="col-span-5">
+      <div class="glass rounded-3xl p-8 border-l-4 border-indigo-500">
+        <p class="text-2xl text-white font-medium leading-relaxed italic mb-4">
+          "읽어야 할 것은 너무 많은데,<br/>
+          <span class="text-indigo-300">시간은 항상 부족합니다.</span>"
+        </p>
+        <p class="text-white/45 text-sm font-light">
+          — 많은 연구자들의 공통된 고민
+        </p>
       </div>
 
-      <h4 class="text-6xl font-black text-white leading-tight mb-2">
-        연구의 본질인 <span style="color: #a5b4fc;">'통찰'</span>에
-      </h4>
-      <h4 class="text-6xl font-black text-white leading-tight mb-12">
-        더 집중하도록
-      </h4>
+      <div class="mt-6 text-white/65 text-base leading-relaxed">
+        <p>
+          폭발적인 정보량 속에서 핵심 맥락을 놓치고,
+          수동적인 읽기만 반복하다 보면
+          <strong class="text-white">연구 생산성의 치명적인 손실</strong>로 이어집니다.
+        </p>
+      </div>
 
-      <!-- 3개 카드 -->
-      <div class="grid grid-cols-3 gap-6 max-w-6xl mx-auto">
-        <div class="glass rounded-3xl p-8 text-left hover:bg-white/8 transition-all">
-          <h3 class="text-white text-xl font-bold mb-3">구조적 파악</h3>
-          <p class="text-white/55 text-sm leading-relaxed">
-            레이아웃을 보존해 맥락 붕괴를 줄입니다.
+      <div class="mt-6 glass rounded-2xl p-5 flex items-start gap-4">
+        <div class="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center text-red-400 text-xl flex-shrink-0">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+        <p class="text-white/55 text-sm leading-relaxed">
+          매년 쏟아지는 수천 편의 연구 논문은 인간 연구자가 물리적으로 따라잡기 불가능한 속도에 도달했습니다.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-span-7 grid grid-rows-2 gap-6">
+      <div class="glass rounded-2xl p-8 flex items-center justify-between relative overflow-hidden">
+        <div class="absolute right-0 top-0 w-32 h-full bg-indigo-500/5 skew-x-12 transform origin-bottom-right"></div>
+        <div class="relative z-10">
+          <p class="text-indigo-300 text-lg font-medium mb-1">Annual Research Papers</p>
+          <div class="flex items-baseline">
+            <span class="big-number text-7xl tracking-tight text-white">5.1M</span>
+            <span class="text-4xl text-indigo-400 font-bold ml-2">+</span>
+          </div>
+          <p class="text-white/45 mt-4 max-w-sm text-sm">
+            전 세계적으로 매년 출판되는 학술 논문의 수.<br/>
+            연구자가 모든 관련 논문을 추적하는 것은 불가능합니다.
           </p>
         </div>
+        <div class="w-24 h-24 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-400 text-4xl">
+          <i class="fa-solid fa-layer-group"></i>
+        </div>
+      </div>
 
-        <div class="glass rounded-3xl p-8 text-left hover:bg-white/8 transition-all">
-          <h3 class="text-white text-xl font-bold mb-3">심층 이해</h3>
-          <p class="text-white/55 text-sm leading-relaxed">
-            핵심 주장·근거·한계를 시각화합니다.
+      <div class="glass rounded-2xl p-8 flex items-center justify-between relative overflow-hidden">
+        <div class="absolute right-0 top-0 w-32 h-full bg-violet-500/5 skew-x-12 transform origin-bottom-right"></div>
+        <div class="relative z-10">
+          <p class="text-violet-300 text-lg font-medium mb-1">Time Spent on Literature Review</p>
+          <div class="flex items-baseline">
+            <span class="big-number text-7xl tracking-tight" style="color: #a78bfa;">70</span>
+            <span class="text-5xl text-violet-400 font-bold ml-1">%</span>
+          </div>
+          <p class="text-white/45 mt-4 max-w-sm text-sm">
+            연구 시간의 대부분이 단순 문헌 검토와 읽기에 소비됩니다.<br/>
+            실제 실험과 창의적 사고를 위한 시간은 부족합니다.
           </p>
         </div>
-
-        <div class="glass rounded-3xl p-8 text-left hover:bg-white/8 transition-all">
-          <h3 class="text-white text-xl font-bold mb-3">능동적 상호작용</h3>
-          <p class="text-white/55 text-sm leading-relaxed">
-            Q&A로 사고를 확장합니다.
-          </p>
+        <div class="w-24 h-24 rounded-full bg-violet-500/10 flex items-center justify-center text-violet-400 text-4xl">
+          <i class="fa-solid fa-clock-rotate-left"></i>
         </div>
       </div>
     </div>
@@ -196,7 +225,7 @@
 <!-- Global Footer -->
 <footer class="global-footer">
   <div class="footer-left">
-    <a href="index.html" class="home-btn">
+    <a href="../index.html" class="home-btn">
       <i class="fa-solid fa-home"></i>
       <span>Home</span>
     </a>
@@ -291,7 +320,7 @@
       location.href = slideOrder[slideOrder.length - 1];
     }
     if (e.key === "Escape") {
-      location.href = "index.html";
+      location.href = "../index.html";
     }
   });
 })();

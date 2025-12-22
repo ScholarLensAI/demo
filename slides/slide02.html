@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ko">
 <head>
-<title>Features 1</title>
+<title>속도가 아닌 판단의 병목</title>
 
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=1280, height=720, initial-scale=1.0"/>
@@ -10,13 +10,13 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 <style>
   :root{
-    --bg:#0b1020; /* deep navy */
+    --bg:#0b1020;
     --card:#0f1733;
     --muted: rgba(255,255,255,.65);
     --muted2: rgba(255,255,255,.45);
     --line: rgba(255,255,255,.10);
-    --accent:#6366f1; /* indigo-500 */
-    --accent2:#a855f7; /* purple-500 */
+    --accent:#6366f1;
+    --accent2:#a855f7;
   }
   *{font-family:'Noto Sans KR',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;}
   body{margin:0;width:1280px;height:720px;overflow:hidden;background:var(--bg);}
@@ -136,90 +136,93 @@
 <body>
 <div class="slide">
   <div class="decor a"></div><div class="decor b"></div>
+
   <div class="absolute left-[56px] right-[56px] top-[40px] flex items-start justify-between">
     <div>
       <div class="flex items-center gap-3">
-        <span class="chip px-3 py-1 rounded-full text-xs font-bold tracking-wider">VALUE</span>
+        <span class="chip px-3 py-1 rounded-full text-xs font-bold tracking-wider">WHY</span>
         <div class="text-white/45 text-xs tracking-widest uppercase">ScholarLens AI</div>
       </div>
-      <h1 class="h1 text-[48px] leading-[1.05] font-black text-white mt-4">Features 1</h1>
-      <div class="text-sm text-white/55 mt-2">Layout-aware parsing이 Q&A 품질을 결정합니다</div>
+      <h1 class="h1 text-[48px] leading-[1.05] font-black text-white mt-4">PROBLEM DEFINITION</h1>
+      <div class="text-sm text-white/55 mt-2">속도가 아닌 판단의 병목</div>
     </div>
     <div class="text-right text-white/35 text-sm">
       <div class="font-semibold">Upstage AI Ambassador 1기 · Team 2</div>
     </div>
   </div>
 
-
-<div class="absolute left-[56px] right-[56px] top-[175px] grid grid-cols-12 gap-8">
-  <div class="col-span-6">
-    <div class="glass rounded-3xl p-6 h-full">
-      <div class="text-white/70 text-sm tracking-widest uppercase">Feature 1</div>
-      <div class="mt-3 text-white text-[32px] font-black leading-tight">
-        Layout-Aware Parsing<br/>
-        <span class="text-indigo-300">& Structured View</span>
-      </div>
-      <div class="mt-5 text-white/55 text-sm leading-relaxed">
-        다단 레이아웃·표·수식·그림을 포함한 PDF에서
-        구조를 보존한 <span class="text-white font-semibold">machine-readable output</span>을 생성합니다.
+  <div class="absolute left-[56px] right-[56px] top-[165px] grid grid-cols-12 gap-8">
+    <!-- 왼쪽: 문제 제기 (더 넓게) -->
+    <div class="col-span-6 flex flex-col justify-center">
+      <div class="glass rounded-3xl p-8 border-l-4 border-indigo-500 mb-6">
+        <p class="text-3xl text-white font-medium italic leading-relaxed">
+          "도대체 무엇이<br/>
+          중요한 논문인가?"
+        </p>
       </div>
 
-      <div class="mt-8 grid grid-cols-2 gap-4">
-        <div class="glass rounded-2xl p-5">
-          <div class="text-white/60 text-xs tracking-widest uppercase">Output</div>
-          <div class="mt-2 flex flex-wrap gap-2">
-            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-white/70 text-xs">HTML</span>
-            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-white/70 text-xs">Text</span>
-            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-white/70 text-xs">Coordinates</span>
-          </div>
-          <div class="mt-3 text-white/45 text-sm">하이라이트/근거 링크를 위한 좌표 기반 anchoring</div>
-        </div>
-        <div class="glass rounded-2xl p-5">
-          <div class="text-white/60 text-xs tracking-widest uppercase">Benefit</div>
-          <div class="mt-2 text-white font-bold">문맥 붕괴 최소화</div>
-          <div class="mt-1 text-white/45 text-sm">읽기 순서 정렬 및 섹션 구조 복원</div>
-        </div>
+      <div class="text-white/75 text-base leading-relaxed space-y-3">
+        <p>
+          연구자는 '읽는 속도'가 느려서가 아니라,<br/>
+          수많은 정보 중에서 <strong class="text-white font-bold">가치 있는 정보를<br/>선별하는 판단</strong>에서 막히고 있습니다.
+        </p>
       </div>
     </div>
-  </div>
 
-  <div class="col-span-6">
-    <div class="glass rounded-3xl p-6 h-full">
-      <div class="text-white/70 text-sm tracking-widest uppercase">Preview</div>
-      <div class="mt-5 grid grid-cols-2 gap-5">
-        <div class="glass rounded-2xl p-5">
-          <div class="text-white/60 text-xs tracking-widest uppercase">PDF</div>
-          <div class="mt-3 h-[240px] rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
-            <div class="text-center text-white/45 text-sm">
-              <i class="fa-regular fa-file-pdf text-3xl text-rose-300"></i>
-              <div class="mt-2">Multi-column · Tables · Equations</div>
-            </div>
-          </div>
+    <!-- 오른쪽: 5단계 플로우 (더 컴팩트하게) -->
+    <div class="col-span-6 flex flex-col justify-start gap-3">
+      <!-- 1. 폭발적인 정보량 -->
+      <div class="glass rounded-2xl p-4 flex items-center gap-4">
+        <div class="w-14 h-14 rounded-2xl bg-red-500/20 flex items-center justify-center text-red-400 text-2xl flex-shrink-0">
+          <i class="fa-solid fa-layer-group"></i>
         </div>
-        <div class="glass rounded-2xl p-5">
-          <div class="text-white/60 text-xs tracking-widest uppercase">Structured</div>
-          <div class="mt-3 h-[240px] rounded-xl bg-white/5 border border-white/10 p-4">
-            <div class="text-white/60 text-xs">Section: Method</div>
-            <div class="mt-2 space-y-2">
-              <div class="h-2 bg-white/10 rounded w-[90%]"></div>
-              <div class="h-2 bg-white/10 rounded w-[82%]"></div>
-              <div class="h-2 bg-white/10 rounded w-[76%]"></div>
-              <div class="h-2 bg-white/10 rounded w-[65%]"></div>
-            </div>
-            <div class="mt-4 text-white/50 text-xs">+ Reading-order · Coordinates</div>
-          </div>
+        <div>
+          <h3 class="text-lg font-bold text-white">폭발적인 정보량 (Information Overload)</h3>
+          <p class="text-white/50 text-sm">매일 쏟아지는 수천 편의 논문으로 인한 압도감</p>
         </div>
       </div>
 
-      <div class="mt-6 glass rounded-2xl p-6">
-        <div class="flex items-start gap-4">
-          <div class="w-12 h-12 rounded-2xl bg-indigo-500/15 flex items-center justify-center text-indigo-300 text-xl">
-            <i class="fa-solid fa-shield-halved"></i>
-          </div>
-          <div>
-            <div class="text-white font-bold">왜 중요한가?</div>
-            <div class="text-white/50 text-sm mt-1">정확한 구조 복원이 있어야, 이후 Highlight / Grounding / Q&A 품질이 안정적으로 유지됩니다.</div>
-          </div>
+      <!-- 2. 수동적 정독 중심의 낮은 효율성 -->
+      <div class="glass rounded-2xl p-4 flex items-center gap-4">
+        <div class="w-14 h-14 rounded-2xl bg-orange-500/20 flex items-center justify-center text-orange-400 text-2xl flex-shrink-0">
+          <i class="fa-solid fa-book-open-reader"></i>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-white">수동적 정독 중심의 낮은 효율성</h3>
+          <p class="text-white/50 text-sm">핵심 파악 없이 처음부터 끝까지 읽는 비효율 반복</p>
+        </div>
+      </div>
+
+      <!-- 3. 연구 생산성 및 트렌드 파악 손실 -->
+      <div class="glass rounded-2xl p-4 flex items-center gap-4">
+        <div class="w-14 h-14 rounded-2xl bg-indigo-500/20 flex items-center justify-center text-indigo-400 text-2xl flex-shrink-0">
+          <i class="fa-solid fa-chart-line-down"></i>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-white">연구 생산성 및 트렌드 파악 손실</h3>
+          <p class="text-white/50 text-sm">중요한 연구 흐름을 놓치고 시간을 낭비하게 됨</p>
+        </div>
+      </div>
+
+      <!-- 4. 구조적 복잡성 -->
+      <div class="glass rounded-2xl p-4 flex items-center gap-4">
+        <div class="w-14 h-14 rounded-2xl bg-cyan-500/20 flex items-center justify-center text-cyan-400 text-2xl flex-shrink-0">
+          <i class="fa-solid fa-cubes"></i>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-white">구조적 복잡성</h3>
+          <p class="text-white/50 text-sm">다단 편집 · 표/수식 혼재 · 레이아웃 붕괴로 맥락 파악 불가</p>
+        </div>
+      </div>
+
+      <!-- 5. 파편화된 도구 -->
+      <div class="glass rounded-2xl p-4 flex items-center gap-4">
+        <div class="w-14 h-14 rounded-2xl bg-amber-500/20 flex items-center justify-center text-amber-400 text-2xl flex-shrink-0">
+          <i class="fa-solid fa-toolbox"></i>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-white">파편화된 도구</h3>
+          <p class="text-white/50 text-sm">읽기·번역·요약·검색이 분산 → 몰입도 저하, 반복 작업 증가</p>
         </div>
       </div>
     </div>
@@ -229,7 +232,7 @@
 <!-- Global Footer -->
 <footer class="global-footer">
   <div class="footer-left">
-    <a href="index.html" class="home-btn">
+    <a href="../index.html" class="home-btn">
       <i class="fa-solid fa-home"></i>
       <span>Home</span>
     </a>
@@ -324,7 +327,7 @@
       location.href = slideOrder[slideOrder.length - 1];
     }
     if (e.key === "Escape") {
-      location.href = "index.html";
+      location.href = "../index.html";
     }
   });
 })();
