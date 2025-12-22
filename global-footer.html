@@ -1,0 +1,228 @@
+<!-- Global Footer Component -->
+<style>
+.global-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 56px;
+
+  background: linear-gradient(to top, rgba(11,16,32,0.95), transparent);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255,255,255,0.08);
+
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  z-index: 999;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-center {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.nav-btn:hover:not(.disabled) {
+  background: rgba(99,102,241,0.15);
+  border-color: rgba(99,102,241,0.3);
+  color: #c7d2fe;
+  transform: translateY(-1px);
+}
+
+.nav-btn.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.slide-counter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: rgba(255,255,255,0.55);
+}
+
+.slide-counter .current {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+.home-btn {
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.home-btn:hover {
+  background: rgba(99,102,241,0.1);
+  border-color: rgba(99,102,241,0.25);
+  color: #c7d2fe;
+}
+
+.kbd-hint {
+  font-size: 11px;
+  color: rgba(255,255,255,0.3);
+}
+
+.kbd {
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.04);
+  margin: 0 3px;
+  font-family: 'Courier New', monospace;
+}
+</style>
+
+<footer class="global-footer">
+  <div class="footer-left">
+    <a href="index.html" class="home-btn">
+      <i class="fa-solid fa-home"></i>
+      <span>Home</span>
+    </a>
+    <div class="kbd-hint">
+      <kbd class="kbd">←</kbd>
+      <kbd class="kbd">→</kbd>
+      키로 이동
+    </div>
+  </div>
+
+  <div class="footer-center">
+    <a href="#" class="nav-btn" id="prevBtn">
+      <i class="fa-solid fa-chevron-left"></i>
+      <span>이전</span>
+    </a>
+
+    <div class="slide-counter">
+      <span class="current" id="currentSlide">1</span>
+      <span>/</span>
+      <span id="totalSlides">12</span>
+    </div>
+
+    <a href="#" class="nav-btn" id="nextBtn">
+      <span>다음</span>
+      <i class="fa-solid fa-chevron-right"></i>
+    </a>
+  </div>
+
+  <div class="footer-right">
+    <div style="color: rgba(255,255,255,0.35); font-size: 11px;">
+      ScholarLens AI · Upstage AI Ambassador 1기 · Team 2
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  // Slide order configuration
+  const slideOrder = [
+    "slide00.html",
+    "slide01.html",
+    "slide02.html",
+    "slide03.html",
+    "slide04.html",
+    "slide05.html",
+    "slide06.html",
+    "slide07.html",
+    "slide08.html",
+    "slide09.html",
+    "slide10.html",
+    "slide11.html",
+    "slide12.html"
+  ];
+
+  // Get current slide
+  const currentFile = location.pathname.split('/').pop();
+  const currentIndex = slideOrder.indexOf(currentFile);
+
+  // Update counter
+  document.getElementById('currentSlide').textContent = currentIndex + 1;
+  document.getElementById('totalSlides').textContent = slideOrder.length;
+
+  // Setup navigation buttons
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  // Previous button
+  if (currentIndex > 0) {
+    prevBtn.href = slideOrder[currentIndex - 1];
+  } else {
+    prevBtn.classList.add('disabled');
+    prevBtn.onclick = (e) => e.preventDefault();
+  }
+
+  // Next button
+  if (currentIndex < slideOrder.length - 1) {
+    nextBtn.href = slideOrder[currentIndex + 1];
+  } else {
+    nextBtn.classList.add('disabled');
+    nextBtn.onclick = (e) => e.preventDefault();
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (e.key === "ArrowRight" || e.key === "PageDown" || e.key === " ") {
+      if (currentIndex < slideOrder.length - 1) {
+        location.href = slideOrder[currentIndex + 1];
+      }
+    }
+    if (e.key === "ArrowLeft" || e.key === "PageUp") {
+      if (currentIndex > 0) {
+        location.href = slideOrder[currentIndex - 1];
+      }
+    }
+    if (e.key === "Home") {
+      location.href = slideOrder[0];
+    }
+    if (e.key === "End") {
+      location.href = slideOrder[slideOrder.length - 1];
+    }
+    if (e.key === "Escape") {
+      location.href = "index.html";
+    }
+  });
+})();
+</script>

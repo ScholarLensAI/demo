@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<title>전문 용어 보존 번역</title>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=1280, height=720, initial-scale=1.0"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Oswald:wght@600;700&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<style>
+  :root{
+    --bg:#0b1020;
+    --card:#0f1733;
+    --muted: rgba(255,255,255,.65);
+    --muted2: rgba(255,255,255,.45);
+    --line: rgba(255,255,255,.10);
+    --accent:#6366f1;
+    --accent2:#a855f7;
+  }
+  *{font-family:'Noto Sans KR',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;}
+  body{margin:0;width:1280px;height:720px;overflow:hidden;background:var(--bg);}
+  .slide{position:relative;width:1280px;height:720px;overflow:hidden;}
+  .glass{background:rgba(255,255,255,.04); border:1px solid var(--line); backdrop-filter: blur(10px);}
+  .chip{border:1px solid rgba(99,102,241,.35); background:rgba(99,102,241,.10); color:#c7d2fe;}
+  .h1{letter-spacing:-0.02em;}
+  .decor{position:absolute;border-radius:9999px;filter:blur(90px);opacity:.55;pointer-events:none;}
+  .decor.a{background:rgba(99,102,241,.35); width:520px; height:520px; left:-140px; top:-180px;}
+  .decor.b{background:rgba(168,85,247,.28); width:620px; height:620px; right:-180px; bottom:-220px;}
+  .footer{position:absolute; left:56px; right:56px; bottom:26px; display:flex; align-items:center; justify-content:space-between; color:rgba(255,255,255,.35); font-size:12px;}
+  .kbd{border:1px solid rgba(255,255,255,.12); padding:2px 8px; border-radius:10px; background:rgba(255,255,255,.04);}
+  .term-badge{display: inline-block; background: rgba(99,102,241,.15); border: 1px solid rgba(99,102,241,.4); padding: 2px 8px; border-radius: 6px; font-family: 'Courier New', monospace; font-size: 0.9em; color: #c7d2fe;}
+  /* Global Footer Styles */
+  .global-footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 56px;
+    background: linear-gradient(to top, rgba(11,16,32,0.95), transparent);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    z-index: 999;
+  }
+
+  .footer-left, .footer-center, .footer-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .nav-btn:hover:not(.disabled) {
+    background: rgba(99,102,241,0.15);
+    border-color: rgba(99,102,241,0.3);
+    color: #c7d2fe;
+    transform: translateY(-1px);
+  }
+
+  .nav-btn.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  .slide-counter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+  }
+
+  .slide-counter .current {
+    color: #6366f1;
+    font-weight: bold;
+  }
+
+  .home-btn {
+    padding: 8px 12px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .home-btn:hover {
+    background: rgba(99,102,241,0.1);
+    border-color: rgba(99,102,241,0.25);
+    color: #c7d2fe;
+  }
+
+  .kbd-hint {
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .kbd {
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 2px 7px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.04);
+    margin: 0 3px;
+    font-family: 'Courier New', monospace;
+  }
+
+</style>
+
+</head>
+<body>
+<div class="slide">
+  <div class="decor a"></div><div class="decor b"></div>
+
+  <div class="absolute left-[56px] right-[56px] top-[40px] flex items-start justify-between">
+    <div>
+      <div class="flex items-center gap-3">
+        <span class="chip px-3 py-1 rounded-full text-xs font-bold tracking-wider">VALUE</span>
+        <div class="text-white/45 text-xs tracking-widest uppercase">ScholarLens AI</div>
+      </div>
+      <h1 class="h1 text-[48px] leading-[1.05] font-black text-white mt-4">Features 3</h1>
+      <div class="text-sm text-white/55 mt-2">전문 용어 보존 번역</div>
+    </div>
+    <div class="text-right text-white/35 text-sm">
+      <div class="font-semibold">Upstage AI Ambassador 1기 · Team 2</div>
+    </div>
+  </div>
+
+  <div class="absolute left-[56px] right-[56px] top-[171px] grid grid-cols-12 gap-5">
+    <!-- 왼쪽: 문제점 -->
+    <div class="col-span-5">
+      <div class="glass rounded-3xl p-4 border-l-4 border-red-500 mb-3">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-12 h-12 rounded-2xl bg-red-500/20 flex items-center justify-center text-red-400 text-xl">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white">일반 번역의 한계</h3>
+        </div>
+        <p class="text-white/65 text-sm leading-relaxed mb-2">
+          기존 번역 도구는 전문 용어를 일반적인 단어로 <strong class="text-red-300">의역하거나 뭉개버려</strong>
+          원문의 정확한 의미가 손실됩니다.
+        </p>
+      </div>
+
+      <div class="glass rounded-2xl p-3 mb-3">
+        <div class="text-white/60 text-xs tracking-widest uppercase mb-3">일반 번역 예시</div>
+        <div class="space-y-3">
+          <div class="glass rounded-xl p-4">
+            <div class="text-white/50 text-xs mb-2">Original</div>
+            <p class="text-white/80 text-sm">We propose a novel <span class="term-badge">CNN-based</span> approach using <span class="term-badge">ResNet-50</span> architecture.</p>
+          </div>
+          <div class="text-center text-red-400">
+            <i class="fa-solid fa-arrow-down"></i>
+          </div>
+          <div class="glass rounded-xl p-4 border-l-4 border-red-500">
+            <div class="text-white/50 text-xs mb-2">❌ 일반 번역 (뭉개짐)</div>
+            <p class="text-red-200 text-sm">우리는 50개 층을 가진 잔차 네트워크 구조를 사용한 새로운 합성곱 신경망 기반 접근법을 제안합니다.</p>
+            <p class="text-white/40 text-xs mt-2">→ 전문 용어가 모두 풀어서 설명되어 원문 의미 파악 어려움</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 오른쪽: 솔루션 -->
+    <div class="col-span-7">
+      <div class="glass rounded-3xl p-4">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 text-xl">
+            <i class="fa-solid fa-check-circle"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-white">ScholarLens의 전문 용어 보존 번역</h3>
+        </div>
+
+        <div class="glass rounded-2xl p-4 mb-3 border-l-4 border-emerald-500">
+          <div class="text-white/60 text-xs tracking-widest uppercase mb-3">전문 용어 보존 번역</div>
+          <div class="space-y-3">
+            <div class="glass rounded-xl p-4">
+              <div class="text-white/50 text-xs mb-2">Original</div>
+              <p class="text-white/80 text-sm">We propose a novel <span class="term-badge">CNN-based</span> approach using <span class="term-badge">ResNet-50</span> architecture.</p>
+            </div>
+            <div class="text-center text-emerald-400">
+              <i class="fa-solid fa-arrow-down"></i>
+            </div>
+            <div class="glass rounded-xl p-4 border-l-4 border-emerald-500">
+              <div class="text-white/50 text-xs mb-2">✅ 전문 용어 보존 번역</div>
+              <p class="text-emerald-200 text-sm">우리는 <span class="term-badge">ResNet-50</span> 아키텍처를 사용한 새로운 <span class="term-badge">CNN 기반</span> 접근법을 제안합니다.</p>
+              <p class="text-white/60 text-xs mt-2">→ CNN, ResNet-50 같은 핵심 용어는 그대로 유지</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2">
+          <div class="glass rounded-2xl p-4 text-center">
+            <div class="w-14 h-14 rounded-2xl bg-indigo-500/20 flex items-center justify-center mx-auto mb-2 text-indigo-300 text-2xl">
+              <i class="fa-solid fa-book-bookmark"></i>
+            </div>
+            <div class="text-white font-bold text-sm mb-1">일관성 유지</div>
+            <p class="text-white/50 text-xs leading-relaxed">분야별 전문 용어와 약어는 일관되게 처리</p>
+          </div>
+
+          <div class="glass rounded-2xl p-4 text-center">
+            <div class="w-14 h-14 rounded-2xl bg-purple-500/20 flex items-center justify-center mx-auto mb-2 text-purple-300 text-2xl">
+              <i class="fa-solid fa-filter"></i>
+            </div>
+            <div class="text-white font-bold text-sm mb-1">선택적 번역</div>
+            <p class="text-white/50 text-xs leading-relaxed">문맥만 번역하고 용어는 원문 유지</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Global Footer -->
+<footer class="global-footer">
+  <div class="footer-left">
+    <a href="index.html" class="home-btn">
+      <i class="fa-solid fa-home"></i>
+      <span>Home</span>
+    </a>
+    <div class="kbd-hint">
+      <kbd class="kbd">←</kbd>
+      <kbd class="kbd">→</kbd>
+      키로 이동
+    </div>
+  </div>
+
+  <div class="footer-center">
+    <a href="#" class="nav-btn" id="prevBtn">
+      <i class="fa-solid fa-chevron-left"></i>
+      <span>이전</span>
+    </a>
+
+    <div class="slide-counter">
+      <span class="current" id="currentSlide">1</span>
+      <span>/</span>
+      <span id="totalSlides">13</span>
+    </div>
+
+    <a href="#" class="nav-btn" id="nextBtn">
+      <span>다음</span>
+      <i class="fa-solid fa-chevron-right"></i>
+    </a>
+  </div>
+
+  <div class="footer-right">
+    <div style="color: rgba(255,255,255,0.35); font-size: 11px;">
+      ScholarLens AI
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  const slideOrder = [
+    "slide00.html",
+    "slide01.html",
+    "slide02.html",
+    "slide03.html",
+    "slide04.html",
+    "slide05.html",
+    "slide06.html",
+    "slide07.html",
+    "slide08.html",
+    "slide09.html",
+    "slide10.html",
+    "slide11.html",
+    "slide12.html"
+  ];
+
+  const currentFile = location.pathname.split('/').pop() || "slide00.html";
+  const currentIndex = slideOrder.indexOf(currentFile);
+
+  document.getElementById('currentSlide').textContent = currentIndex + 1;
+  document.getElementById('totalSlides').textContent = slideOrder.length;
+
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  if (currentIndex > 0) {
+    prevBtn.href = slideOrder[currentIndex - 1];
+  } else {
+    prevBtn.classList.add('disabled');
+    prevBtn.onclick = (e) => e.preventDefault();
+  }
+
+  if (currentIndex < slideOrder.length - 1) {
+    nextBtn.href = slideOrder[currentIndex + 1];
+  } else {
+    nextBtn.classList.add('disabled');
+    nextBtn.onclick = (e) => e.preventDefault();
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === "ArrowRight" || e.key === "PageDown" || e.key === " " || e.key === "Enter") {
+      if (currentIndex < slideOrder.length - 1) {
+        location.href = slideOrder[currentIndex + 1];
+      }
+    }
+    if (e.key === "ArrowLeft" || e.key === "PageUp") {
+      if (currentIndex > 0) {
+        location.href = slideOrder[currentIndex - 1];
+      }
+    }
+    if (e.key === "Home") {
+      location.href = slideOrder[0];
+    }
+    if (e.key === "End") {
+      location.href = slideOrder[slideOrder.length - 1];
+    }
+    if (e.key === "Escape") {
+      location.href = "index.html";
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
